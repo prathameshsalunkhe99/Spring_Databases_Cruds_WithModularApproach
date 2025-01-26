@@ -22,5 +22,16 @@ public class EmployeeDao {
 		session.close();
 		return "Data is inserted";
 	}
+	public String daleteData(int emp_id) {
+		Session session =factory.openSession();
+		Transaction tr=session.beginTransaction();
+		Employee e1= session.get(Employee.class, emp_id);
+		session.remove(e1);
+		tr.commit();
+		session.close();
+		return"Data deleted Sucessfully";
+		
+		
+	}
 
 }

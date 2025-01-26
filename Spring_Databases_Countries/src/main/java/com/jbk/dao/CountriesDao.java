@@ -22,4 +22,15 @@ public class CountriesDao {
 		return "Data inserted Sucessfully";
 
 	}
+
+	public String deleteData(int country_Id) {
+		Session session = factory.openSession();
+		Transaction tr = session.beginTransaction();
+		Countries c = session.get(Countries.class, country_Id);
+		session.remove(c);
+		tr.commit();
+		session.close();
+		return "Data is Deleted Sucessfully";
+	}
+
 }

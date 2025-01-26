@@ -12,14 +12,24 @@ import com.jbk.entity.State;
 public class StateDao {
 	@Autowired
 	SessionFactory factory;
+
 	public String insertData(State s) {
-		Session session =factory.openSession();
-		Transaction tr =session.beginTransaction();
+		Session session = factory.openSession();
+		Transaction tr = session.beginTransaction();
 		session.persist(s);
 		tr.commit();
 		session.close();
-		return"Data inserted Sucessfully";
+		return "Data inserted Sucessfully";
 	}
-	
+
+	public String deleteData(int state_id) {
+		Session session = factory.openSession();
+		Transaction tr = session.beginTransaction();
+		State s = session.get(State.class, state_id);
+		session.remove(s);
+		tr.commit();
+		session.close();
+		return "data is deleted Sucessfully";
+	}
 
 }

@@ -10,9 +10,16 @@ import com.jbk.entity.Mobiles;
 public class MobilesServices {
 	@Autowired
 	MobilesDao dao;
-	public String insertData (Mobiles m) {
-		String msg =dao.incertData(m);
+
+	public String insertData(Mobiles m) {
+		String msg = dao.incertData(m);
 		return msg;
+	}
+
+	public String deleteData(int mobile_id) {
+		String msg = dao.deleteData(mobile_id);
+		return msg;
+
 	}
 
 }

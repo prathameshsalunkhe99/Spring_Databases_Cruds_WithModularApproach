@@ -23,4 +23,15 @@ public class CarsDao {
 		return "Data is Inserted";
 	}
 
+	public String deleteData(int car_id) {
+		Session session = factory.openSession();
+		Transaction tr = session.beginTransaction();
+		Cars c = session.get(Cars.class, car_id);
+		session.remove(c);
+		tr.commit();
+		session.close();
+		return "Data is Deleted sucessfully";
+
+	}
+
 }

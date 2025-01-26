@@ -17,4 +17,9 @@ public class EmployeeService {
 
 	}
 
+	public String DeleteData(int emp_id) {
+		String msg = dao.daleteData(emp_id);
+		return msg;
+	}
+
 }

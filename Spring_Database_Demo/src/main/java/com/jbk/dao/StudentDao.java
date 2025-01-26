@@ -20,15 +20,16 @@ public class StudentDao {
 		session.close();
 		return " Data is inserted";
 	}
-     public String deleteData(int stud_id) {
-    	 Session session= factory.openSession();
-    	 Transaction tr=session.beginTransaction();
-    	 Student s1= session.get(Student.class, stud_id); 
-    	 session.remove(s1);
-    	 tr.commit();
-    	 session.close();
-    	 return"Data is Deleted Sucessfully";
-     
+
+	public String deleteData(int stud_id) {
+		Session session = factory.openSession();
+		Transaction tr = session.beginTransaction();
+		Student s1 = session.get(Student.class, stud_id);
+		session.remove(s1);
+		tr.commit();
+		session.close();
+		return "Data is Deleted Sucessfully";
+
 	}
 
 }

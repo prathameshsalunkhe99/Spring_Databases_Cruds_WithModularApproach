@@ -3,7 +3,6 @@ package com.jbk.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-
 import com.jbk.dao.StudentDao;
 import com.jbk.entity.Student;
 
@@ -16,8 +15,9 @@ public class StudentService {
 		String msg = dao.insertData(s);
 		return msg;
 	}
-	public String deleteData( int stud_id) {
-		String msg =dao.deleteData(stud_id);
+
+	public String deleteData(int stud_id) {
+		String msg = dao.deleteData(stud_id);
 		return msg;
 	}
 

@@ -20,7 +20,8 @@ public class StudentController {
 		String msg = service.insertData(s);
 		return msg;
 	}
-@DeleteMapping("/deleteData/{stud_id}")
+
+	@DeleteMapping("/deleteData/{stud_id}")
 	public String deleteData(@PathVariable int stud_id) {
 		String msg = service.deleteData(stud_id);
 		return msg;

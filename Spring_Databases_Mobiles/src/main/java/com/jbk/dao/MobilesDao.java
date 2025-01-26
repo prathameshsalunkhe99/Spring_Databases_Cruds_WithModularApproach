@@ -22,4 +22,15 @@ public class MobilesDao {
 		return "Data is Inserted Sucessfully";
 	}
 
+	public String deleteData(int mobile_id) {
+		Session session = factory.openSession();
+		Transaction tr = session.beginTransaction();
+		Mobiles m = session.get(Mobiles.class, mobile_id);
+		session.remove(m);
+		tr.commit();
+		session.close();
+		return "Data is Deleted Sucessfully";
+
+	}
+
 }

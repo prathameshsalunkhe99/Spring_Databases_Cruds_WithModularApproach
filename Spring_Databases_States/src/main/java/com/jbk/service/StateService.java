@@ -16,4 +16,9 @@ public class StateService {
 		return msg;
 	}
 
+	public String deleteData(int stste_id) {
+		String msg = dao.deleteData(stste_id);
+		return msg;
+	}
+
 }

@@ -2,6 +2,7 @@ package com.jbk.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+
 @Entity
 public class State {
 	@Id

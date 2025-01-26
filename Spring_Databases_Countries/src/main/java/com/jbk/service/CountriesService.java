@@ -10,11 +10,15 @@ import com.jbk.entity.Countries;
 public class CountriesService {
 	@Autowired
 	CountriesDao dao;
- 
+
 	public String insertData(Countries c) {
-		String msg =dao.insertData(c);
+		String msg = dao.insertData(c);
 		return msg;
-		
-		
+
+	}
+
+	public String deleteData(int contries_id) {
+		String msg = dao.deleteData(contries_id);
+		return msg;
 	}
 }
