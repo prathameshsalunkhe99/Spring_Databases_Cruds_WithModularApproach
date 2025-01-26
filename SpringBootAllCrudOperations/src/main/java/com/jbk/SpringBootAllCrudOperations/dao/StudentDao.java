@@ -1,4 +1,4 @@
-package com.jbk.dao;
+package com.jbk.SpringBootAllCrudOperations.dao;
 
 import java.util.List;
 import org.hibernate.query.Query;
@@ -7,7 +7,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import com.jbk.entity.Student;
+
+import com.jbk.SpringBootAllCrudOperations.entity.Student;
+
 
 @Repository
 public class StudentDao {

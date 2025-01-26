@@ -1,4 +1,4 @@
-package com.jbk.controller;
+package com.jbk.SpringBootAllCrudOperations.controller;
 
 import java.util.List;
 
@@ -11,8 +11,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jbk.entity.Student;
-import com.jbk.service.StudentService;
+import com.jbk.SpringBootAllCrudOperations.entity.Student;
+import com.jbk.SpringBootAllCrudOperations.service.StudentService;
+
 
 @RestController
 public class StudentController {
@@ -44,3 +45,4 @@ public class StudentController {
 
 	}
 }
+

@@ -1,12 +1,14 @@
-package com.jbk.service;
+package com.jbk.SpringBootAllCrudOperations.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.jbk.dao.StudentDao;
-import com.jbk.entity.Student;
+import com.jbk.SpringBootAllCrudOperations.dao.StudentDao;
+import com.jbk.SpringBootAllCrudOperations.entity.Student;
+
+
 
 @Service
 public class StudentService {
