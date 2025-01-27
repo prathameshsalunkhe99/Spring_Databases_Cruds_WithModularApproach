@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jbk.entity.Student;
@@ -37,10 +39,16 @@ public class StudentController {
 		String msg = service.updateData(stud_id, updateData);
 		return msg;
 	}
+	@GetMapping("/getSingleRecord")
+	public Student getSingleRecord(@RequestParam int stud_id) {
+		Student s=service.getSingleRecord(stud_id);
+		return s;
+		
+	}
 
 	@GetMapping("/getAllRecord")
 	public List<Student> getAllRecord() {
-		return service.getAllRecord();
-
+		List<Student> list = service.getAllRecord();
+		return list;
 	}
 }

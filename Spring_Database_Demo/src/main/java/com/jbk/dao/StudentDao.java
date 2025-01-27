@@ -1,10 +1,10 @@
 package com.jbk.dao;
 
 import java.util.List;
-import org.hibernate.query.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import com.jbk.entity.Student;
@@ -40,10 +40,23 @@ public class StudentDao {
 		Student s = session.get(Student.class, stud_id);
 		s.setStud_name(updateStudent.getStud_name());
 		s.setStud_city(updateStudent.getStud_city());
-		session.persist(s);
+		session.merge(s);
 		tr.commit();
 		session.close();
 		return "Data is udated sucessfully";
+
+	}
+
+	public Student getSingleRecord(int stud_id) {
+		Session session = factory.openSession();
+		Transaction tr = session.beginTransaction();
+		String hqlQuery = "from Student where stud_id=:myid";
+		Query<Student> query = session.createQuery(hqlQuery, Student.class);
+		query.setParameter("myid",stud_id);
+		Student s=query.uniqueResult();
+		tr.commit();
+		session.close();
+		return s;
 
 	}
 
@@ -53,9 +66,7 @@ public class StudentDao {
 		String hqlQuery = "from Student";
 		Query<Student> query = session.createQuery(hqlQuery, Student.class);
 		List<Student> list = query.getResultList();
-		for (Student student : list) {
-			System.out.println(student);
-		}
+
 		tr.commit();
 		session.close();
 		return list;

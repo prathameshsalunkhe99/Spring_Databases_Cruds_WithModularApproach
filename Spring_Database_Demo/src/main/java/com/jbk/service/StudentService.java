@@ -28,9 +28,15 @@ public class StudentService {
 		return msg;
 	}
 
-	public List<Student> getAllRecord() {
-		return dao.getAllRecord();
+	public Student getSingleRecord(int stud_id) {
+		Student s = dao.getSingleRecord(stud_id);
+		return s;
 
+	}
+
+	public List<Student> getAllRecord() {
+		List<Student> list = dao.getAllRecord();
+		return list;
 	}
 
 }
